@@ -1,0 +1,126 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class strings
+{
+   private:
+   char a[50],b[50],c[50];
+   public :
+   strings()
+   {
+     cout<<"\n\n\t\t\t\t\t\t String Function Programme ";
+   }
+   void set_string(char *d)
+   {
+     for(int i=0;i<50;i++)
+     {
+     c[i]=*(d+i);
+     }
+   }
+   void set_string1(char *d)
+   {
+     for(int i=0;i<50;i++)
+     {
+     a[i]=*(d+i);
+     }
+   }
+   void set_string2(char *d)
+   {
+     for(int i=0;i<50;i++)
+     {
+     b[i]=*(d+i);
+     }
+   }
+   string get_string1()
+   {
+     return a;
+   }
+   string add_getter()
+   {
+       return strcat(a,b);
+   }
+
+   void equate_setter(char *q)
+   {
+
+   }
+   void equate()
+   {
+       int c;
+       c=strcmp(a,b);
+       if(c>0)
+       cout<<"\n"<<a<<" string is greater";
+       else if(c==0)
+       cout<<"\n\nBoth Strings Are Equal";
+       else
+       cout<<endl<<b<<" string is greater ";
+
+   }
+   void copy()
+   {
+       strcpy(a,b);
+       cout<<"\n\nThe New Copy String is :"<<a;
+   }
+   string get_string()
+   {
+     return c;
+   }
+
+
+};
+int main()
+{
+  char c[50],d[50];
+  strings m;
+  int a=0;
+  while(a!=5)
+  {
+  cout<<"\n\n***********----------------***********------------------***********------------------************--------------------**********\n\n";
+  cout<<"\n\t\tPlease Choose Your Input operation among the 5 by choosing the serial number\n\n1.String Store\t\t 2.String Add \t\t3.String Compare \t4.Stored Value Of String \t\t5.Exit \n\nYour Choice : ";
+
+  cin>>a;
+  switch(a)
+  {
+    case 1:
+    cout<<"\nEnter Your string A :";
+    cin.ignore();
+    cin.getline(c,50);
+    m.set_string(c);
+    cout<<"\nThe String A Stored Is : "<<m.get_string();
+    break;
+
+    case 2:
+    cout<<"\nEnter first string for add operation :";
+    cin.ignore();
+    cin.getline(c,50);
+    m.set_string1(c);
+    cout<<"\nEnter second string for add operation :";
+    cin.getline(d,50);
+    m.set_string2(d);
+    cout<<"\nThe New added String A Is :"<<m.add_getter();
+    break;
+
+    case 3:
+    cout<<"\nEnter first string  for compare operation :";
+    cin.ignore();
+    cin.getline(c,50);
+    m.set_string1(c);
+    cout<<"\nEnter second string  for compare operation :";
+    cin.getline(d,50);
+    m.set_string2(d);
+    m.equate();
+    break;
+
+    case 4:
+    cout<<"\nThe required stored string is :"<<m.get_string();
+    break;
+
+    case 5:
+    return 0;
+
+  }
+  }
+
+  return 0;
+
+}
